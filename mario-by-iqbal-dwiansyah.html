@@ -7,59 +7,77 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
             text-align: center;
-            background-color: #f2f2f2;
             margin: 0;
             padding: 0;
         }
 
-        h1, h2 {
-            margin: 20px 0;
+        h1 {
+            margin-top: 30px;
+            color: #ff0000;
         }
 
-        .duration-buttons button {
-            padding: 15px 25px;
-            margin: 10px;
-            font-size: 18px;
-            cursor: pointer;
-            border: none;
-            border-radius: 8px;
-            background-color: #ffcc00;
-            transition: background-color 0.3s;
+        h2 {
+            margin-bottom: 30px;
+            color: #333;
         }
 
-        .duration-buttons button:hover {
-            background-color: #ff9900;
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
         }
 
-        .action-buttons {
-            margin-top: 20px;
+        .plan-card {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .plan-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .plan-price {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #0077cc;
         }
 
         .action-buttons button {
-            padding: 10px 20px;
-            margin: 5px;
+            padding: 10px 15px;
+            margin: 5px 0;
+            width: 100%;
             font-size: 16px;
-            cursor: pointer;
             border: none;
-            border-radius: 5px;
-            background-color: #00ccff;
-            color: white;
-            transition: background-color 0.3s;
+            border-radius: 8px;
+            cursor: pointer;
+            color: #fff;
+            transition: transform 0.2s;
         }
 
         .action-buttons button:hover {
-            background-color: #0099cc;
+            transform: scale(1.05);
         }
 
-        .tab-content {
-            display: none;
-            margin-top: 20px;
-        }
+        .buy-now { background-color: #28a745; }      /* Hijau */
+        .discord { background-color: #7289da; }     /* Biru Discord */
+        .tiktok { background-color: #ff0050; }      /* Merah Tiktok */
 
-        .active {
-            display: block;
-        }
     </style>
 </head>
 <body>
@@ -67,43 +85,42 @@
     <h1>Interactive Super Mario Bros by Iqbal Dwiansyah</h1>
     <h2>Silahkan pilih durasi yang anda inginkan</h2>
 
-    <div class="duration-buttons">
-        <button onclick="showTab('day1')">1 Hari</button>
-        <button onclick="showTab('day7')">7 Hari</button>
-        <button onclick="showTab('day30')">30 Hari</button>
-    </div>
+    <div class="container">
 
-    <div id="day1" class="tab-content">
-        <div class="action-buttons">
-            <button onclick="window.open('https://sociabuzz.com/iqbaldwiansyah/support', '_blank')">Buy Now</button>
-            <button onclick="window.open('https://discord.com/users/iqbaldwiansyah', '_blank')">Hubungi Discord</button>
-            <button onclick="window.open('https://www.tiktok.com/@iqbaldwiansyah', '_blank')">Hubungi TikTok</button>
+        <!-- 1 Hari -->
+        <div class="plan-card">
+            <div class="plan-title">1 Hari</div>
+            <div class="plan-price">Rp20.000</div>
+            <div class="action-buttons">
+                <button class="buy-now" onclick="window.open('https://sociabuzz.com/iqbaldwiansyah/support', '_blank')">Buy Now</button>
+                <button class="discord" onclick="window.open('https://discord.com/users/iqbaldwiansyah', '_blank')">Hubungi Discord</button>
+                <button class="tiktok" onclick="window.open('https://www.tiktok.com/@iqbaldwiansyah', '_blank')">Hubungi TikTok</button>
+            </div>
         </div>
-    </div>
 
-    <div id="day7" class="tab-content">
-        <div class="action-buttons">
-            <button onclick="window.open('https://sociabuzz.com/iqbaldwiansyah/support', '_blank')">Buy Now</button>
-            <button onclick="window.open('https://discord.com/users/iqbaldwiansyah', '_blank')">Hubungi Discord</button>
-            <button onclick="window.open('https://www.tiktok.com/@iqbaldwiansyah', '_blank')">Hubungi TikTok</button>
+        <!-- 7 Hari -->
+        <div class="plan-card">
+            <div class="plan-title">7 Hari</div>
+            <div class="plan-price">Rp125.000</div>
+            <div class="action-buttons">
+                <button class="buy-now" onclick="window.open('https://sociabuzz.com/iqbaldwiansyah/support', '_blank')">Buy Now</button>
+                <button class="discord" onclick="window.open('https://discord.com/users/iqbaldwiansyah', '_blank')">Hubungi Discord</button>
+                <button class="tiktok" onclick="window.open('https://www.tiktok.com/@iqbaldwiansyah', '_blank')">Hubungi TikTok</button>
+            </div>
         </div>
-    </div>
 
-    <div id="day30" class="tab-content">
-        <div class="action-buttons">
-            <button onclick="window.open('https://sociabuzz.com/iqbaldwiansyah/support', '_blank')">Buy Now</button>
-            <button onclick="window.open('https://discord.com/users/iqbaldwiansyah', '_blank')">Hubungi Discord</button>
-            <button onclick="window.open('https://www.tiktok.com/@iqbaldwiansyah', '_blank')">Hubungi TikTok</button>
+        <!-- 30 Hari -->
+        <div class="plan-card">
+            <div class="plan-title">30 Hari</div>
+            <div class="plan-price">Rp400.000</div>
+            <div class="action-buttons">
+                <button class="buy-now" onclick="window.open('https://sociabuzz.com/iqbaldwiansyah/support', '_blank')">Buy Now</button>
+                <button class="discord" onclick="window.open('https://discord.com/users/iqbaldwiansyah', '_blank')">Hubungi Discord</button>
+                <button class="tiktok" onclick="window.open('https://www.tiktok.com/@iqbaldwiansyah', '_blank')">Hubungi TikTok</button>
+            </div>
         </div>
-    </div>
 
-    <script>
-        function showTab(tabId) {
-            const tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => tab.classList.remove('active'));
-            document.getElementById(tabId).classList.add('active');
-        }
-    </script>
+    </div>
 
 </body>
 </html>
