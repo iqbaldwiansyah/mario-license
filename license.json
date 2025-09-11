@@ -1,0 +1,21 @@
+[
+  {
+    "license": "punyaiqbal",
+    "start_date": "2025-09-11",
+    "expire": "Permanent",
+    "owner": "Iqbal Dwiansyah"
+  },
+  {
+    "license": "punyasurya",
+    "start_date": "2025-09-11",
+    "expire": "3",
+    "owner": "Fadeli Surya"
+  },
+  {
+    "license": "kripsing",
+    "start_date": "2025-08-01",
+    "expire": "17",
+    "owner": "Kripsing",
+    "status": "banned"
+  }
+]
