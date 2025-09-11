@@ -35,7 +35,7 @@
             background-color: #fff;
             border-radius: 12px;
             padding: 20px;
-            width: 250px;
+            width: 280px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             transition: transform 0.3s, box-shadow 0.3s;
         }
@@ -49,6 +49,13 @@
             font-size: 22px;
             margin-bottom: 10px;
             color: #333;
+        }
+
+        .plan-features {
+            text-align: left;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            color: #555;
         }
 
         .plan-price {
@@ -78,6 +85,17 @@
         .discord { background-color: #7289da; }     /* Biru Discord */
         .tiktok { background-color: #ff0050; }      /* Merah Tiktok */
 
+        .bottom-image {
+            margin-top: 40px;
+        }
+
+        .bottom-image img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
     </style>
 </head>
 <body>
@@ -90,6 +108,11 @@
         <!-- 1 Hari -->
         <div class="plan-card">
             <div class="plan-title">1 Hari</div>
+            <ul class="plan-features">
+                <li>Custom Name Mario</li>
+                <li>Custom HP Start (default = 50)</li>
+                <li>Default Banner In Game (Miku Mario)</li>
+            </ul>
             <div class="plan-price">Rp20.000</div>
             <div class="action-buttons">
                 <button class="buy-now" onclick="window.open('https://sociabuzz.com/iqbaldwiansyah/support', '_blank')">Buy Now</button>
@@ -101,6 +124,11 @@
         <!-- 7 Hari -->
         <div class="plan-card">
             <div class="plan-title">7 Hari</div>
+            <ul class="plan-features">
+                <li>Custom Name Mario</li>
+                <li>Custom HP Start (default = 50)</li>
+                <li>Default Banner In Game (Miku Mario)</li>
+            </ul>
             <div class="plan-price">Rp125.000</div>
             <div class="action-buttons">
                 <button class="buy-now" onclick="window.open('https://sociabuzz.com/iqbaldwiansyah/support', '_blank')">Buy Now</button>
@@ -112,6 +140,11 @@
         <!-- 30 Hari -->
         <div class="plan-card">
             <div class="plan-title">30 Hari</div>
+            <ul class="plan-features">
+                <li>Custom Name Mario</li>
+                <li>Custom HP Start (default = 50)</li>
+                <li>Custom Banner In Game</li>
+            </ul>
             <div class="plan-price">Rp400.000</div>
             <div class="action-buttons">
                 <button class="buy-now" onclick="window.open('https://sociabuzz.com/iqbaldwiansyah/support', '_blank')">Buy Now</button>
@@ -120,6 +153,11 @@
             </div>
         </div>
 
+    </div>
+
+    <!-- Gambar di bawah kotak -->
+    <div class="bottom-image">
+        <img src="Super Mario Interactive.PNG" alt="Super Mario Interactive">
     </div>
 
 </body>
