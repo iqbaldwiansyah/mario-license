@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Super Mario Bros</title>
+    <link rel="icon" href="tool.ico" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -96,6 +97,54 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
+        /* Pop-up overlay */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        .popup-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .popup-buttons button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: #fff;
+            width: 120px;
+            transition: transform 0.2s;
+        }
+
+        .popup-buttons button:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-yes { background-color: #28a745; }
+        .btn-no { background-color: #dc3545; }
+
     </style>
 </head>
 <body>
@@ -115,7 +164,7 @@
             </ul>
             <div class="plan-price">Rp20.000</div>
             <div class="action-buttons">
-                <button class="buy-now" onclick="window.open('https://sociabuzz.com/iqbaldwiansyah/support', '_blank')">Buy Now</button>
+                <button class="buy-now" onclick="showPopup('1 Hari', 'Rp20.000')">Buy Now</button>
                 <button class="discord" onclick="window.open('https://discord.com/users/iqbaldwiansyah', '_blank')">Hubungi Discord</button>
                 <button class="tiktok" onclick="window.open('https://www.tiktok.com/@iqbaldwiansyah', '_blank')">Hubungi TikTok</button>
             </div>
@@ -131,7 +180,7 @@
             </ul>
             <div class="plan-price">Rp125.000</div>
             <div class="action-buttons">
-                <button class="buy-now" onclick="window.open('https://sociabuzz.com/iqbaldwiansyah/support', '_blank')">Buy Now</button>
+                <button class="buy-now" onclick="showPopup('7 Hari', 'Rp125.000')">Buy Now</button>
                 <button class="discord" onclick="window.open('https://discord.com/users/iqbaldwiansyah', '_blank')">Hubungi Discord</button>
                 <button class="tiktok" onclick="window.open('https://www.tiktok.com/@iqbaldwiansyah', '_blank')">Hubungi TikTok</button>
             </div>
@@ -147,7 +196,7 @@
             </ul>
             <div class="plan-price">Rp400.000</div>
             <div class="action-buttons">
-                <button class="buy-now" onclick="window.open('https://sociabuzz.com/iqbaldwiansyah/support', '_blank')">Buy Now</button>
+                <button class="buy-now" onclick="showPopup('30 Hari', 'Rp400.000')">Buy Now</button>
                 <button class="discord" onclick="window.open('https://discord.com/users/iqbaldwiansyah', '_blank')">Hubungi Discord</button>
                 <button class="tiktok" onclick="window.open('https://www.tiktok.com/@iqbaldwiansyah', '_blank')">Hubungi TikTok</button>
             </div>
@@ -159,6 +208,37 @@
     <div class="bottom-image">
         <img src="Super Mario Interactive.PNG" alt="Super Mario Interactive">
     </div>
+
+    <!-- Pop-up -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content">
+            <p id="popupText">Yakin kamu memilih durasi ...?</p>
+            <div class="popup-buttons">
+                <button class="btn-yes" id="btnYes">Ya, saya setuju</button>
+                <button class="btn-no" onclick="closePopup()">Tidak</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPopup(duration, price) {
+            const popupText = document.getElementById('popupText');
+            popupText.textContent = `Yakin kamu memilih durasi ${duration} dengan harga ${price}? 
+Saat masuk ke halaman support kamu isi amount di ${price} dan text bebas.`;
+            
+            const btnYes = document.getElementById('btnYes');
+            btnYes.onclick = function() {
+                window.open('https://sociabuzz.com/iqbaldwiansyah/support', '_blank');
+                closePopup();
+            }
+
+            document.getElementById('popupOverlay').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('popupOverlay').style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
