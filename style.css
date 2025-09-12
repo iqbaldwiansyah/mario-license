@@ -185,7 +185,7 @@ p.description {
 .discord { background-color: #7289da; }
 .tiktok { background-color: #ff0050; }
 
-/* ===== ABOUT ICON BUTTONS (pill style) ===== */
+/* ===== ABOUT PILL BUTTONS (ganti rules lama tentang about-icons) ===== */
 .about-icons {
   display: flex;
   justify-content: center;
@@ -196,58 +196,68 @@ p.description {
 }
 
 /* pill button */
-.social-btn {
+.about-icons .social-btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 16px;
-  border-radius: 12px;
-  color: #fff;                 /* teks putih */
-  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 999px;            /* pill */
+  color: #fff !important;          /* teks putih, paksa override jika perlu */
+  text-decoration: none !important;/* hilangkan underline */
   font-weight: 600;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s;
   font-size: 15px;
+  min-height: 44px;                /* tinggi konsisten */
+  line-height: 1;
 }
 
-/* icon inside button */
-.social-btn i, .social-btn .custom-s {
+/* pastikan semua state link tidak bergaris bawah dan warna terwarisi */
+.about-icons .social-btn,
+.about-icons .social-btn:link,
+.about-icons .social-btn:visited,
+.about-icons .social-btn:active,
+.about-icons .social-btn:hover {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+/* icon di kiri (Bootstrap Icon) */
+.about-icons .social-btn i,
+.about-icons .social-btn .custom-s {
   font-size: 18px;
-  width: 20px;
+  width: 22px;
+  height: 22px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #fff;                 /* icon putih */
+  color: #fff;                     /* icon putih */
+  background: transparent;         /* pastikan tak ada background */
 }
 
-/* hover effect */
-.social-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
-}
-
-/* brand colors */
-.social-btn.discord   { background-color: #5865F2; } /* Discord purple */
-.social-btn.tiktok    { background-color: #000000; } /* TikTok black */
-.social-btn.youtube   { background-color: #FF0000; } /* YouTube red */
-.social-btn.sociabuzz { background-color: #28a745; } /* Sociabuzz green */
-
-/* custom S for Sociabuzz if you don't have an icon yet */
-.custom-s {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  font-weight: 700;
-  font-family: Arial, sans-serif;
+/* label teks */
+.about-icons .social-btn span {
+  display: inline-block;
   color: #fff;
 }
 
-/* responsive: tombol jadi sedikit lebih kecil di layar sempit */
+/* hover effect */
+.about-icons .social-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+  opacity: 0.98;
+}
+
+/* BRAND COLORS (sesuai permintaan) */
+.about-icons .social-btn.discord   { background-color: #5865F2; } /* purple */
+.about-icons .social-btn.tiktok    { background-color: #000000; } /* black */
+.about-icons .social-btn.youtube   { background-color: #FF0000; } /* red */
+.about-icons .social-btn.sociabuzz { background-color: #28a745; } /* green */
+
+/* responsive kecil */
 @media (max-width: 480px) {
-  .social-btn { padding: 8px 12px; font-size: 14px; gap: 8px; }
-  .social-btn i, .social-btn .custom-s { font-size: 16px; width: 18px; }
+  .about-icons .social-btn { padding: 8px 12px; font-size: 14px; gap: 8px; }
+  .about-icons .social-btn i, .about-icons .social-btn .custom-s { font-size: 16px; width: 18px; height: 18px; }
 }
 
 /* Popup Styling */
