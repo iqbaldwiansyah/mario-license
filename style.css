@@ -87,21 +87,33 @@ p.description {
 
 .effects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 1fr; /* 3 kolom rata */
     gap: 25px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px;
+
+    /* Tambahan agar semua kolom sama tinggi */
+    align-items: start;
 }
 
 .effect-column {
     display: flex;
     flex-direction: column;
     gap: 12px;
+
+    /* Biar tinggi seragam di grid */
+    height: 100%;
 }
 
+/* Kolom tengah (Spawns) selalu di tengah dan text center */
 .center-column {
-    order: 2; /* Supaya Spawn tetap di tengah */
+    order: 2;
+    text-align: center;
+}
+
+.center-column .effect-card {
+    justify-content: center;
 }
 
 .category-title {
