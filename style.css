@@ -185,46 +185,69 @@ p.description {
 .discord { background-color: #7289da; }
 .tiktok { background-color: #ff0050; }
 
-/* ====== ABOUT ICONS STYLE ====== */
-.icon-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    font-size: 28px;
-    color: white;
-    border-radius: 50%;
-    text-decoration: none;
-    transition: transform 0.2s, box-shadow 0.2s;
+/* ===== ABOUT ICON BUTTONS (pill style) ===== */
+.about-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 18px;
 }
 
-.icon-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+/* pill button */
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  color: #fff;                 /* teks putih */
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  font-size: 15px;
 }
 
-.icon-btn.discord {
-    background-color: #5865F2; /* Warna resmi Discord */
+/* icon inside button */
+.social-btn i, .social-btn .custom-s {
+  font-size: 18px;
+  width: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;                 /* icon putih */
 }
 
-.icon-btn.tiktok {
-    background-color: #000000; /* Hitam */
+/* hover effect */
+.social-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
 }
 
-.icon-btn.youtube {
-    background-color: #FF0000; /* Merah */
+/* brand colors */
+.social-btn.discord   { background-color: #5865F2; } /* Discord purple */
+.social-btn.tiktok    { background-color: #000000; } /* TikTok black */
+.social-btn.youtube   { background-color: #FF0000; } /* YouTube red */
+.social-btn.sociabuzz { background-color: #28a745; } /* Sociabuzz green */
+
+/* custom S for Sociabuzz if you don't have an icon yet */
+.custom-s {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  color: #fff;
 }
 
-.icon-btn.sociabuzz {
-    background-color: #28a745; /* Hijau */
-    font-weight: bold;
-}
-
-.custom-sociabuzz {
-    font-size: 28px;
-    font-family: Arial, sans-serif;
-    color: white;
+/* responsive: tombol jadi sedikit lebih kecil di layar sempit */
+@media (max-width: 480px) {
+  .social-btn { padding: 8px 12px; font-size: 14px; gap: 8px; }
+  .social-btn i, .social-btn .custom-s { font-size: 16px; width: 18px; }
 }
 
 /* Popup Styling */
