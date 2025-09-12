@@ -122,6 +122,73 @@ p.description {
     color: #555;
 }
 
+.effects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.effect-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.center-column {
+  /* Supaya spawn selalu berada di tengah */
+  order: 2;
+}
+
+.category-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.effect-card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 10px;
+  gap: 10px;
+  transition: transform 0.2s ease;
+}
+
+.effect-card:hover {
+  transform: translateY(-3px);
+}
+
+.effect-image {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.effect-info h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.effect-info p {
+  margin: 2px 0 0 0;
+  font-size: 13px;
+  color: #555;
+}
+
+/* Responsif: kalau layar kecil jadi 1 kolom */
+@media (max-width: 900px) {
+  .effects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ====== BUY SECTION ====== */
 .container {
     display: flex;
