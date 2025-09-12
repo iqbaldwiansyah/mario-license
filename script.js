@@ -15,7 +15,7 @@ function showPopup(duration, price) {
     document.getElementById("btnYes").onclick = function () {
         // konversi harga "Rp20.000" jadi angka 20000
         let numericPrice = selectedPrice.replace(/[^\d]/g, "");
-        window.location.href = `https://sociabuzz.com/iqbaldwiansyah/support?amount=${numericPrice}&message=Saya+ingin+membeli+${encodeURIComponent(selectedDuration)}`;
+        window.open(`https://sociabuzz.com/iqbaldwiansyah/support`);
     };
 }
 
