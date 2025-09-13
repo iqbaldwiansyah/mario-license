@@ -108,7 +108,6 @@ p.description {
 
 /* Kolom tengah (Spawns) selalu di tengah dan text center */
 .center-column {
-    order: 2;
     text-align: center;
 }
 
@@ -132,6 +131,7 @@ p.description {
     padding: 12px;
     gap: 10px;
     transition: transform 0.2s ease;
+    min-height: 80px;
 }
 
 .effect-card:hover {
@@ -146,11 +146,23 @@ p.description {
     background-color: #eee;
     padding: 5px;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.effect-info {
+    flex: 1; /* biar teks mengisi sisa ruang */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left; /* rata kiri biar rapi */
 }
 
 .effect-info h4 {
     margin: 0;
     font-size: 16px;
+    font-weight: 600;
 }
 
 .effect-info p {
